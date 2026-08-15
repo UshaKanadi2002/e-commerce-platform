@@ -52,7 +52,8 @@ function Register() {
             setError("");
 
             const response = await fetch(
-                "http://localhost:5000/api/auth/register-customer",
+                //"http://localhost:5000/api/auth/register-customer",
+                `${import.meta.env.VITE_API_URL}/api/auth/register-customer`,
                 {
                     method: "POST",
                     headers: {

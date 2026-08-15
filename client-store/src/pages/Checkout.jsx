@@ -70,7 +70,8 @@ const handlePlaceOrder = async () => {
         setFormError("");
 
         const response = await fetch(
-            "http://localhost:5000/api/orders/online",
+            //"http://localhost:5000/api/orders/online",
+            `${import.meta.env.VITE_API_URL}/api/orders/online`,
             {
                 method: "POST",
                 headers: {

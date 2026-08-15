@@ -10,7 +10,8 @@ function Orders() {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                "http://localhost:5000/api/orders",
+                //"http://localhost:5000/api/orders",
+                `${import.meta.env.VITE_API_URL}/api/orders`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -46,7 +47,8 @@ function Orders() {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                `http://localhost:5000/api/orders/${orderId}/status`,
+                //`http://localhost:5000/api/orders/${orderId}/status`,
+                `${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`,
                 {
                     method: "PUT",
                     headers: {

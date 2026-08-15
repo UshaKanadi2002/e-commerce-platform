@@ -13,8 +13,31 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://ecommerce-admin-portal-nu.vercel.app",
+    "https://ecommerce-client-store-alpha.vercel.app"
+];
+
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
+
+/*
+app.use(cors()); //allow all
+app.use(express.json());
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET','POST'],
+    allowedHeraders: ['Content-Type','Authorization']
+}));
+*/
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);

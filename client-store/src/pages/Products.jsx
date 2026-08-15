@@ -20,7 +20,8 @@
         setError("");
 
         const response = await fetch(
-            `http://localhost:5000/api/products/store/${storeId}`
+            //`http://localhost:5000/api/products/store/${storeId}`
+            `${import.meta.env.VITE_API_URL}/api/products/store/${storeId}`
         );
 
         const data = await response.json();
@@ -43,7 +44,8 @@
     const fetchStores = async () => {
     try {
         const response = await fetch(
-            "http://localhost:5000/api/stores"
+            //"http://localhost:5000/api/stores"
+            `${import.meta.env.VITE_API_URL}/api/stores`
         );
 
         const data = await response.json();
