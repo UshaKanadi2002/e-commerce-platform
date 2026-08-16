@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
         res.status(500).json({
             message: "Server error while fetching stores",
             error: String(error),
-            sdetails: error
+            details: error
         });
         
     }
