@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm --prefix admin-portal run build",
+  "buildCommand": "cd admin-portal && npm run build",
   "outputDirectory": "admin-portal/dist",
   "rewrites": [
     {
