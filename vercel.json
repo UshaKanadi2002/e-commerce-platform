@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm --prefix admin-portal run build",
+  "outputDirectory": "admin-portal/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
